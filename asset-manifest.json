@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio_aditya/static/css/main.e0f0c26d.css",
-    "main.js": "/portfolio_aditya/static/js/main.96c486cb.js",
+    "main.js": "/portfolio_aditya/static/js/main.185d5de9.js",
     "static/js/453.4efb1ffe.chunk.js": "/portfolio_aditya/static/js/453.4efb1ffe.chunk.js",
     "static/media/cover-super-depo.png": "/portfolio_aditya/static/media/cover-super-depo.4958a5a6d4b5090650f3.png",
     "static/media/cover-container.png": "/portfolio_aditya/static/media/cover-container.ed6cf4ef571f14db76d4.png",
@@ -9,6 +9,7 @@
     "static/media/cover-pos-bali.png": "/portfolio_aditya/static/media/cover-pos-bali.a8a64b72c6bba99fe665.png",
     "static/media/cover-integrator.png": "/portfolio_aditya/static/media/cover-integrator.a5e9638c3501bf38841d.png",
     "static/media/cover-ihub.png": "/portfolio_aditya/static/media/cover-ihub.44a209a8680a006d862a.png",
+    "static/media/cover-income.png": "/portfolio_aditya/static/media/cover-income.44a209a8680a006d862a.png",
     "static/media/cover-looyal.png": "/portfolio_aditya/static/media/cover-looyal.27c9c1191a1280849d74.png",
     "static/media/cover-pelra.png": "/portfolio_aditya/static/media/cover-pelra.aec58a4cf783da174814.png",
     "static/media/cover-leave.png": "/portfolio_aditya/static/media/cover-leave.35043747efe90666b3c8.png",
@@ -26,11 +27,11 @@
     "static/media/pre.svg": "/portfolio_aditya/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/portfolio_aditya/index.html",
     "main.e0f0c26d.css.map": "/portfolio_aditya/static/css/main.e0f0c26d.css.map",
-    "main.96c486cb.js.map": "/portfolio_aditya/static/js/main.96c486cb.js.map",
+    "main.185d5de9.js.map": "/portfolio_aditya/static/js/main.185d5de9.js.map",
     "453.4efb1ffe.chunk.js.map": "/portfolio_aditya/static/js/453.4efb1ffe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0f0c26d.css",
-    "static/js/main.96c486cb.js"
+    "static/js/main.185d5de9.js"
   ]
 }
