@@ -6,6 +6,7 @@ import {
   DiNodejs,
   DiGit,
   DiJava,
+  DiDotnet,
 } from "react-icons/di";
 import {
   SiFirebase,
@@ -25,6 +26,9 @@ function Techstack() {
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
         <SiDotnet />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <DiDotnet />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiJavascript1 />
