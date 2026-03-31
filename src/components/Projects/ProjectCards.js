@@ -15,11 +15,16 @@ function ProjectCards({
   stack = [],
   highlights = [],
   ghLink,
-  demoLink
+  demoLink,
 }) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={imgPath} alt={title} className="project-cover-img" />
+      <Card.Img
+        variant="top"
+        src={imgPath}
+        alt={title}
+        className="project-cover-img"
+      />
       <Card.Body className="project-card-body">
         <div className="project-meta-row">
           <span className="project-domain-badge">{domain}</span>
