@@ -4,7 +4,8 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import projects from "../../data/projects";
 
-function Projects() {
+function Projects({ language = "id" }) {
+  const isIndonesian = language === "id";
   const [selectedCompany, setSelectedCompany] = useState("All");
   const companyFilters = ["All", ...new Set(projects.map((project) => project.company))];
   const filteredProjects =
@@ -17,27 +18,38 @@ function Projects() {
       <Particle />
       <Container>
         <div className="project-hero-panel">
-          <p className="project-kicker">Portfolio Highlights</p>
+          <p className="project-kicker">
+            {isIndonesian ? "Sorotan Portofolio" : "Portfolio Highlights"}
+          </p>
           <h1 className="project-heading">
-            Key <strong className="purple">Project Experience</strong>
+            {isIndonesian ? (
+              <>
+                Pengalaman <strong className="purple">Proyek Utama</strong>
+              </>
+            ) : (
+              <>
+                Key <strong className="purple">Project Experience</strong>
+              </>
+            )}
           </h1>
           <p className="project-hero-description">
-            Curated delivery portfolio across HR systems, startup products, and
-            enterprise port logistics integrations.
+            {isIndonesian
+              ? "Portofolio pengembangan sistem pada domain HR, produk startup, dan integrasi logistik pelabuhan enterprise."
+              : "Curated delivery portfolio across HR systems, startup products, and enterprise port logistics integrations."}
           </p>
 
           <div className="project-quick-stats">
             <div className="project-stat-item">
               <span>{projects.length}</span>
-              <p>Projects</p>
+              <p>{isIndonesian ? "Proyek" : "Projects"}</p>
             </div>
             <div className="project-stat-item">
               <span>{companyFilters.length - 1}</span>
-              <p>Companies</p>
+              <p>{isIndonesian ? "Perusahaan" : "Companies"}</p>
             </div>
             <div className="project-stat-item">
               <span>{new Set(projects.map((project) => project.domain)).size}</span>
-              <p>Domains</p>
+              <p>{isIndonesian ? "Domain" : "Domains"}</p>
             </div>
           </div>
 
@@ -50,7 +62,7 @@ function Projects() {
                 }`}
                 onClick={() => setSelectedCompany(company)}
               >
-                {company}
+                {company === "All" && isIndonesian ? "Semua" : company}
               </button>
             ))}
           </div>

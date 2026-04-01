@@ -7,7 +7,9 @@ import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 
-function About() {
+function About({ language = "id" }) {
+  const isIndonesian = language === "id";
+
   return (
     <Container fluid className="about-section">
       <Particle />
@@ -22,9 +24,17 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="purple">I'M</strong>
+              {isIndonesian ? (
+                <>
+                  Kenali <strong className="purple">Saya</strong>
+                </>
+              ) : (
+                <>
+                  Know Who <strong className="purple">I'M</strong>
+                </>
+              )}
             </h1>
-            <Aboutcard />
+            <Aboutcard language={language} />
           </Col>
           <Col
             md={5}
@@ -35,13 +45,29 @@ function About() {
           </Col>
         </Row>
         <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
+          {isIndonesian ? (
+            <>
+              <strong className="purple">Keahlian</strong> Profesional
+            </>
+          ) : (
+            <>
+              Professional <strong className="purple">Skillset </strong>
+            </>
+          )}
         </h1>
 
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
+          {isIndonesian ? (
+            <>
+              <strong className="purple">Tools</strong> yang Saya Gunakan
+            </>
+          ) : (
+            <>
+              <strong className="purple">Tools</strong> I use
+            </>
+          )}
         </h1>
         <Toolstack />
 

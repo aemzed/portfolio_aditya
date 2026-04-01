@@ -5,7 +5,9 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 
-function Home() {
+function Home({ language = "id" }) {
+  const isIndonesian = language === "id";
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -14,19 +16,19 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
+                {isIndonesian ? "Halo!" : "Hi There!"}{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name">
-                I'M
+                {isIndonesian ? "SAYA" : "I'M"}
                 <strong className="main-name"> ADITYA ZUNAIDI</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
+                <Type language={language} />
               </div>
             </Col>
 
@@ -41,7 +43,7 @@ function Home() {
           </Row>
         </Container>
       </Container>
-      <Home2 />
+      <Home2 language={language} />
     </section>
   );
 }

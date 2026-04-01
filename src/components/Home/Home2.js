@@ -8,49 +8,99 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
-function Home2() {
+function Home2({ language = "id" }) {
+  const isIndonesian = language === "id";
+
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              {isIndonesian ? (
+                <>
+                  IZINKAN SAYA <span className="purple"> PERKENALKAN </span> DIRI
+                </>
+              ) : (
+                <>
+                  LET ME <span className="purple"> INTRODUCE </span> MYSELF
+                </>
+              )}
             </h1>
-            <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="purple"> PHP, JavaScript, TypeScript, Flutter, and .NET </b>
-              </i>
-              <br />
-              <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web or Mobile Technologies </b> 
-                {/* and
-                also in areas related to{" "} */}
-                {/* <b className="purple">
-                  Data Science.
-                </b> */}
-              </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i>
-            </p>
+            {isIndonesian ? (
+              <p className="home-about-body">
+                Saya mulai tertarik pada dunia pemrograman dan terus belajar
+                untuk meningkatkan kualitas solusi yang saya bangun.
+                <br />
+                <br />
+                Saya cukup familiar dengan teknologi seperti
+                <i>
+                  <b className="purple">
+                    {" "}
+                    PHP, JavaScript, TypeScript, Flutter, dan .NET
+                  </b>
+                </i>
+                .
+                <br />
+                <br />
+                Fokus utama saya saat ini adalah mengembangkan
+                <i>
+                  <b className="purple"> web dan mobile technologies</b>
+                </i>
+                .
+                <br />
+                <br />
+                Jika memungkinkan, saya juga membangun produk menggunakan
+                <b className="purple"> Node.js</b> serta
+                <i>
+                  <b className="purple">
+                    {" "}
+                    modern JavaScript libraries and frameworks
+                  </b>
+                </i>
+                &nbsp;seperti
+                <i>
+                  <b className="purple"> React.js dan Next.js</b>
+                </i>
+                .
+              </p>
+            ) : (
+              <p className="home-about-body">
+                I fell in love with programming and have continued learning to
+                improve the quality of solutions I build.
+                <br />
+                <br />I am fluent in classics like
+                <i>
+                  <b className="purple">
+                    {" "}
+                    PHP, JavaScript, TypeScript, Flutter, and .NET
+                  </b>
+                </i>
+                .
+                <br />
+                <br />
+                My field of interest is building
+                <i>
+                  <b className="purple"> web and mobile technologies</b>
+                </i>
+                .
+                <br />
+                <br />
+                Whenever possible, I also apply my passion for developing
+                products with <b className="purple">Node.js</b> and
+                <i>
+                  <b className="purple">
+                    {" "}
+                    modern JavaScript libraries and frameworks
+                  </b>
+                </i>
+                &nbsp;like
+                <i>
+                  <b className="purple"> React.js and Next.js</b>
+                </i>
+                .
+              </p>
+            )}
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
@@ -60,9 +110,17 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>{isIndonesian ? "TEMUKAN SAYA DI" : "FIND ME ON"}</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              {isIndonesian ? (
+                <>
+                  Silakan <span className="purple">terhubung </span>dengan saya
+                </>
+              ) : (
+                <>
+                  Feel free to <span className="purple">connect </span>with me
+                </>
+              )}
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

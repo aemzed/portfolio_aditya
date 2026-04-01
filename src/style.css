@@ -205,6 +205,27 @@ button:focus {
   width: 100%;
 }
 
+.language-switch-item {
+  display: flex;
+  align-items: center;
+}
+
+.language-switch-btn {
+  border: 1px solid rgba(201, 91, 245, 0.6);
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: all 0.3s ease-out 0s;
+}
+
+.language-switch-btn:hover {
+  background: rgba(201, 91, 245, 0.15);
+  border-color: #c95bf5;
+}
+
 /* --------- */
 /* Home section */
 /* --------- */

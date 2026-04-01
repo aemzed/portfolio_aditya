@@ -7,15 +7,17 @@ import { Link } from "react-router-dom";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
+  AiOutlineGlobal,
   AiOutlineUser,
   AiOutlineSafetyCertificate,
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
 
-function NavBar() {
+function NavBar({ language = "id", onToggleLanguage }) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const isIndonesian = language === "id";
 
   useEffect(() => {
     function scrollHandler() {
@@ -57,7 +59,8 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                <AiOutlineHome style={{ marginBottom: "2px" }} />{" "}
+                {isIndonesian ? "Beranda" : "Home"}
               </Nav.Link>
             </Nav.Item>
 
@@ -67,7 +70,8 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                <AiOutlineUser style={{ marginBottom: "2px" }} />{" "}
+                {isIndonesian ? "Tentang" : "About"}
               </Nav.Link>
             </Nav.Item>
 
@@ -80,7 +84,7 @@ function NavBar() {
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Projects
+                {isIndonesian ? "Proyek" : "Projects"}
               </Nav.Link>
             </Nav.Item>
 
@@ -90,7 +94,8 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <CgFileDocument style={{ marginBottom: "2px" }} />{" "}
+                {isIndonesian ? "Resume" : "Resume"}
               </Nav.Link>
             </Nav.Item>
 
@@ -101,8 +106,29 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineSafetyCertificate style={{ marginBottom: "2px" }} />{" "}
-                Certificate
+                {isIndonesian ? "Sertifikat" : "Certificate"}
               </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item className="language-switch-item">
+              <button
+                type="button"
+                className="language-switch-btn"
+                onClick={() => {
+                  if (onToggleLanguage) {
+                    onToggleLanguage();
+                  }
+                  updateExpanded(false);
+                }}
+                aria-label={
+                  isIndonesian
+                    ? "Ganti bahasa ke Inggris"
+                    : "Switch language to Indonesian"
+                }
+              >
+                <AiOutlineGlobal style={{ marginBottom: "2px" }} />{" "}
+                {isIndonesian ? "EN" : "ID"}
+              </button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

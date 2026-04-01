@@ -5,7 +5,8 @@ import Particle from "../Particle";
 import pdf from "../../Assets/Aditya_Maulana_Zunaidi_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 
-function ResumeNew() {
+function ResumeNew({ language = "id" }) {
+  const isIndonesian = language === "id";
   const [height, setHeight] = useState("850px");
 
   useEffect(() => {
@@ -23,10 +24,11 @@ function ResumeNew() {
             variant="primary"
             href={pdf}
             target="_blank"
+            rel="noreferrer"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;{isIndonesian ? "Unduh CV" : "Download CV"}
           </Button>
         </Row>
 
@@ -49,10 +51,11 @@ function ResumeNew() {
             variant="primary"
             href={pdf}
             target="_blank"
+            rel="noreferrer"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;{isIndonesian ? "Unduh CV" : "Download CV"}
           </Button>
         </Row>
       </Container>

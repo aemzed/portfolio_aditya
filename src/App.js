@@ -20,6 +20,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, updateLoad] = useState(true);
+  const [language, setLanguage] = useState(() => {
+    if (typeof window === "undefined") {
+      return "id";
+    }
+    return window.localStorage.getItem("portfolio_language") === "en"
+      ? "en"
+      : "id";
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,18 +37,34 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("portfolio_language", language);
+    }
+  }, [language]);
+
   return (
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+        <Navbar
+          language={language}
+          onToggleLanguage={() =>
+            setLanguage((currentLanguage) =>
+              currentLanguage === "id" ? "en" : "id"
+            )
+          }
+        />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/certificate" element={<Certificate />} />
+          <Route path="/" element={<Home language={language} />} />
+          <Route path="/project" element={<Projects language={language} />} />
+          <Route path="/about" element={<About language={language} />} />
+          <Route path="/resume" element={<Resume language={language} />} />
+          <Route
+            path="/certificate"
+            element={<Certificate language={language} />}
+          />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />

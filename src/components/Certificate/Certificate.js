@@ -11,15 +11,40 @@ import softwareEngineerPdf from "../../Assets/Certificate/software_engineer cert
 import sqlAdvancedPdf from "../../Assets/Certificate/sql_advanced certificate.pdf";
 
 const certificates = [
-  { title: "Software Engineer Certificate", file: softwareEngineerPdf },
-  { title: "C# Basic Certificate", file: csharpBasicPdf },
-  { title: "JavaScript Intermediate Certificate", file: javascriptIntermediatePdf },
-  { title: "Problem Solving Basic Certificate", file: problemSolvingBasicPdf },
-  { title: "REST API Intermediate Certificate", file: restApiIntermediatePdf },
-  { title: "SQL Advanced Certificate", file: sqlAdvancedPdf },
+  {
+    titleId: "Sertifikat Software Engineer",
+    titleEn: "Software Engineer Certificate",
+    file: softwareEngineerPdf,
+  },
+  {
+    titleId: "Sertifikat C# Basic",
+    titleEn: "C# Basic Certificate",
+    file: csharpBasicPdf,
+  },
+  {
+    titleId: "Sertifikat JavaScript Intermediate",
+    titleEn: "JavaScript Intermediate Certificate",
+    file: javascriptIntermediatePdf,
+  },
+  {
+    titleId: "Sertifikat Problem Solving Basic",
+    titleEn: "Problem Solving Basic Certificate",
+    file: problemSolvingBasicPdf,
+  },
+  {
+    titleId: "Sertifikat REST API Intermediate",
+    titleEn: "REST API Intermediate Certificate",
+    file: restApiIntermediatePdf,
+  },
+  {
+    titleId: "Sertifikat SQL Advanced",
+    titleEn: "SQL Advanced Certificate",
+    file: sqlAdvancedPdf,
+  },
 ];
 
-function Certificate() {
+function Certificate({ language = "id" }) {
+  const isIndonesian = language === "id";
   const [height, setHeight] = useState("860px");
 
   useEffect(() => {
@@ -34,13 +59,15 @@ function Certificate() {
         <Particle />
 
         {certificates.map((certificate) => (
-          <React.Fragment key={certificate.title}>
+          <React.Fragment key={certificate.titleEn}>
             <Row style={{ justifyContent: "center", position: "relative" }}>
               <h2
                 className="project-heading"
                 style={{ fontSize: "1.35rem", marginBottom: "14px" }}
               >
-                <strong className="purple">{certificate.title}</strong>
+                <strong className="purple">
+                  {isIndonesian ? certificate.titleId : certificate.titleEn}
+                </strong>
               </h2>
             </Row>
 
@@ -53,13 +80,13 @@ function Certificate() {
                 style={{ maxWidth: "300px", marginBottom: "18px" }}
               >
                 <AiOutlineSafetyCertificate />
-                &nbsp;Open PDF
+                &nbsp;{isIndonesian ? "Buka PDF" : "Open PDF"}
               </Button>
             </Row>
 
             <Row className="resume" style={{ justifyContent: "center" }}>
               <iframe
-                title={certificate.title}
+                title={isIndonesian ? certificate.titleId : certificate.titleEn}
                 src={certificate.file}
                 loading="lazy"
                 style={{
