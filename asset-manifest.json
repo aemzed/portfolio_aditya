@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio_aditya/static/css/main.e0f0c26d.css",
-    "main.js": "/portfolio_aditya/static/js/main.1c216030.js",
+    "main.css": "/portfolio_aditya/static/css/main.9bdf7604.css",
+    "main.js": "/portfolio_aditya/static/js/main.5f9ca21f.js",
     "static/js/453.4efb1ffe.chunk.js": "/portfolio_aditya/static/js/453.4efb1ffe.chunk.js",
     "static/media/c_sharp_basic certificate.pdf": "/portfolio_aditya/static/media/c_sharp_basic certificate.65f5d450ca68b4312d15.pdf",
     "static/media/javascript_intermediate certificate.pdf": "/portfolio_aditya/static/media/javascript_intermediate certificate.d7d855bb39acaf6758e7.pdf",
@@ -32,12 +32,12 @@
     "static/media/Aditya_Maulana_Zunaidi_Resume.pdf": "/portfolio_aditya/static/media/Aditya_Maulana_Zunaidi_Resume.ac5b7ccab0d33d19c1b8.pdf",
     "static/media/pre.svg": "/portfolio_aditya/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/portfolio_aditya/index.html",
-    "main.e0f0c26d.css.map": "/portfolio_aditya/static/css/main.e0f0c26d.css.map",
-    "main.1c216030.js.map": "/portfolio_aditya/static/js/main.1c216030.js.map",
+    "main.9bdf7604.css.map": "/portfolio_aditya/static/css/main.9bdf7604.css.map",
+    "main.5f9ca21f.js.map": "/portfolio_aditya/static/js/main.5f9ca21f.js.map",
     "453.4efb1ffe.chunk.js.map": "/portfolio_aditya/static/js/453.4efb1ffe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0f0c26d.css",
-    "static/js/main.1c216030.js"
+    "static/css/main.9bdf7604.css",
+    "static/js/main.5f9ca21f.js"
   ]
 }
